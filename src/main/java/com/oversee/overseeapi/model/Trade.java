@@ -30,4 +30,7 @@ public class Trade {
 
     public Date date;
 
+    @ManyToOne
+    public Portfolio owner;
+
 }

@@ -29,6 +29,9 @@ public class Investment {
 
     public Long plProcent;
 
+    @ManyToOne
+    public Portfolio owner;
+
 }
 
 
