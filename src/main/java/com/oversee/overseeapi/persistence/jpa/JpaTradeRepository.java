@@ -9,6 +9,7 @@ import org.springframework.data.repository.Repository;
  * Created by Alek Ivanovski on 3/17/2018.
  */
 @Profile("jpa")
-public interface JpaTradeRepository extends TradeRepository, Repository<Trade, Long> {
+public interface JpaTradeRepository extends TradeRepository,
+        Repository<Trade, Long> {
 
 }

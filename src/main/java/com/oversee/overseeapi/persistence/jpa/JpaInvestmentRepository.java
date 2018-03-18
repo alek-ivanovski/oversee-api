@@ -9,6 +9,7 @@ import org.springframework.data.repository.Repository;
  * Created by Alek Ivanovski on 3/18/2018.
  */
 @Profile("jpa")
-public interface JpaInvestmentRepository extends InvestmentRepository, Repository<Investment, Long> {
+public interface JpaInvestmentRepository extends InvestmentRepository,
+        Repository<Investment, Long> {
 
 }
