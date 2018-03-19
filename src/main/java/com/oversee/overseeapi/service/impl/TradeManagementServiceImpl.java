@@ -1,5 +1,6 @@
 package com.oversee.overseeapi.service.impl;
 
+import com.oversee.overseeapi.model.Portfolio;
 import com.oversee.overseeapi.model.Trade;
 import com.oversee.overseeapi.persistence.TradeRepository;
 import com.oversee.overseeapi.service.TradeManagementService;
@@ -22,7 +23,8 @@ public class TradeManagementServiceImpl implements TradeManagementService {
     }
 
     @Override
-    public Trade add(String symbol1, String symbol2, String type, Long units, Long execute_at, Date date){
+    public Trade add(String symbol1, String symbol2, String type, Long units,
+                     Long execute_at, Date date, Portfolio owner){
         Trade trade = new Trade();
         trade.symbol1 = symbol1;
         trade.symbol2 = symbol2;
@@ -30,6 +32,7 @@ public class TradeManagementServiceImpl implements TradeManagementService {
         trade.units = units;
         trade.execute_at = execute_at;
         trade.date = date;
+        trade.owner = owner;
         return this.tradeRepository.save(trade);
     }
 }

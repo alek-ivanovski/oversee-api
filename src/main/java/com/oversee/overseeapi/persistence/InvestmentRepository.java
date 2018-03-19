@@ -11,8 +11,4 @@ public interface InvestmentRepository {
 
     Investment save(Investment investment);
 
-    Optional<Investment> findOne(Long id);
-
-    void delete(Long id);
-
 }

@@ -32,6 +32,7 @@ public class ManageTradesController {
                 trade.type,
                 trade.units,
                 trade.execute_at,
-                trade.date);
+                trade.date,
+                trade.owner);
     }
 }

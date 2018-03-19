@@ -11,8 +11,4 @@ public interface TradeRepository {
 
     Trade save(Trade trade);
 
-    Optional<Trade> findOne(Long id);
-
-    void delete(Trade trade);
-
 }
