@@ -35,4 +35,9 @@ public class TradeManagementServiceImpl implements TradeManagementService {
         trade.owner = owner;
         return this.tradeRepository.save(trade);
     }
+
+    @Override
+    public Iterable<Trade> findAll(){
+        return this.tradeRepository.findAll();
+    }
 }

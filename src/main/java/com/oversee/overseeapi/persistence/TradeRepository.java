@@ -11,4 +11,6 @@ public interface TradeRepository {
 
     Trade save(Trade trade);
 
+    Iterable<Trade> findAll();
+
 }

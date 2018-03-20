@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE,
-        consumes = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ManageTradesController {
 
     private TradeManagementService tradeManagementService;
@@ -34,5 +33,10 @@ public class ManageTradesController {
                 trade.execute_at,
                 trade.date,
                 trade.owner);
+    }
+
+    @RequestMapping(value = "trades", method = RequestMethod.GET)
+    public Iterable<Trade> getTrades(){
+        return tradeManagementService.findAll();
     }
 }

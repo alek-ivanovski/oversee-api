@@ -1,6 +1,8 @@
 package com.oversee.overseeapi.model;
 
 import org.elasticsearch.search.DocValueFormat;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -30,7 +32,9 @@ public class Trade {
 
     public Date date;
 
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.LAZY)
+//    IMPORTANT: @NotFound is only a temporary solution, may cause problems in production
+    @NotFound(action = NotFoundAction.IGNORE)
     public Portfolio owner;
 
 }

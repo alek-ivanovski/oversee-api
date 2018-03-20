@@ -13,4 +13,6 @@ public interface TradeManagementService {
     Trade add(String symbol1, String symbol2, String type, Long units,
               Long execute_at, Date date, Portfolio owner);
 
+    Iterable<Trade> findAll();
+
 }
